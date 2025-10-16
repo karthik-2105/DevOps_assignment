@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
-                bat '"C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pytest -v'
+                bat '"C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pytest -v --capture=no'
             }
         }
         stage('Build Docker Image') {
