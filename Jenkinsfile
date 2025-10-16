@@ -1,9 +1,6 @@
 pipeline {
-    agent {
-        docker { 
-            image 'python:3.11-slim'  // Use a Python Docker container
-        }
-    }
+    agent any
+    
     environment {
         DOCKER_IMAGE = "calculator-app"  // Docker image name
     }
