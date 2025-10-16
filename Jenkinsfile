@@ -12,12 +12,12 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                bat '"C:\Users\Admin\AppData\Local\Programs\Python\Python314" install --no-cache-dir -r requirements.txt'
+                bat '"C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pip install --no-cache-dir -r requirements.txt'
             }
         }
         stage('Run Unit Tests') {
             steps {
-                bat '"C:\Users\Admin\AppData\Local\Programs\Python\Python314" -m pytest -v'
+                bat '"C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" -m pytest -v'
             }
         }
         stage('Build Docker Image') {
