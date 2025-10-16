@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     environment {
         DOCKER_IMAGE = "calculator-app"  // Docker image name
     }
@@ -12,17 +12,17 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install --no-cache-dir -r requirements.txt'
+                bat 'pip install --no-cache-dir -r requirements.txt'
             }
         }
         stage('Run Unit Tests') {
             steps {
-                sh 'pytest -v'
+                bat 'pytest -v'
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE .'
+                bat 'docker build -t %DOCKER_IMAGE% .'
             }
         }
     }
