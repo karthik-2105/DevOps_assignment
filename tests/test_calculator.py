@@ -39,3 +39,5 @@ def test_negative_input_raises_value_error():
         add(-1, 2)
     with pytest.raises(ValueError):
         multiply(3, -4)
+
+    print("ALL DONE!")
